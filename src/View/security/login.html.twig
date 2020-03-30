@@ -53,3 +53,29 @@
         </div>
     </div>
 {% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        /**
+        $.post('/api/login',   // url
+            JSON.stringify({
+                username: "CristinaEbert",
+                password: "engage"
+            }), // data to be submit
+            function(data, status, jqXHR) {// success callback
+                $('p').append('status: ' + status + ', data: ' + data);
+            });
+        $.ajax({
+            type: "POST",
+            url: "/api/login",
+            data: JSON.stringify({
+                "username": "CristinaEbert",
+                "password": "engage"
+            }),
+            contentType: 'application/json',
+        }).done(function( data ) {
+            alert( "Data Loaded: " + data );
+        });*/
+    </script>
+{% endblock %}

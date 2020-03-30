@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\ApiToken;
 use App\Entity\User;
 use App\Form\AccountType;
 use App\Form\UserChangeType;
@@ -49,7 +50,7 @@ class SecurityController extends AbstractController
         }
     }
     /**
-     * @Route("/api", name="app_api")
+     * @Route("/api/login", name="app_api_login", methods={"POST"})
      * @param Request $request
      * @param AuthenticationUtils $utils
      * @param AuthorizationCheckerInterface $authChecker
@@ -57,9 +58,20 @@ class SecurityController extends AbstractController
      */
     public function api(HttpFoundation\Request $request, AuthenticationUtils $utils, AuthorizationCheckerInterface $authChecker)
     {
-            $error = $utils->getLastAuthenticationError();
+        $user = $this->getUser();
+        $token = $this->getUser() ? new ApiToken($user) : null;
+        if (!$this->isGranted('IS_AUTHENTICATED_FULLY')) {
+            return $this->json([
+                'error' => 'Invalid login request: check that the Content-Type header is "application/json".'
+            ], 400);
+        }
 
-            return $this->json($error);
+        return $this->json([
+                'user' => $this->getUser() ? $this->getUser()->getId() : null,
+                'roles' => $this->getUser() ? $this->getUser()->getRoles() : null,
+                'Token' => $token,
+            ]
+        );
     }
     /**
      * @Route("/logout", name="logout")

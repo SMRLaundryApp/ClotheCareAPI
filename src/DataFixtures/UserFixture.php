@@ -5,10 +5,18 @@ namespace App\DataFixtures;
 use App\Entity\ApiToken;
 use App\Entity\User;
 use Doctrine\Common\Persistence\ObjectManager;
+use Faker\Generator;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class UserFixture extends BaseFixture
 {
+
+    /** @var ObjectManager */
+    private $manager;
+
+    /** @var Generator */
+    protected $faker;
+
     private $passwordEncoder;
 
     public function __construct(UserPasswordEncoderInterface $passwordEncoder)
@@ -19,8 +27,11 @@ class UserFixture extends BaseFixture
     protected function loadData(ObjectManager $manager)
     {
         $this->createMany(10, 'main_users', function($i) use ($manager) {
+            $name=$this->faker->name('male');
             $user = new User();
-            $user->setEmail(sprintf('spacebar%d@example.com', $i));
+            $username=str_replace(' ', '', $name);
+            $user->setUsername($username);
+            $user->setEmail($username.'@example.com');
             $user->setPassword($this->passwordEncoder->encodePassword(
                 $user,
                 'engage'
@@ -35,8 +46,11 @@ class UserFixture extends BaseFixture
         });
 
         $this->createMany(3, 'admin_users', function($i) {
+            $name=$this->faker->name('male');
+            $username=str_replace(' ', '', $name);
             $user = new User();
-            $user->setEmail(sprintf('admin%d@thespacebar.com', $i));
+            $user->setUsername($username);
+            $user->setEmail($username.'@thespacebar.com');
             $user->setRoles(['ROLE_ADMIN']);
             $user->setPassword($this->passwordEncoder->encodePassword(
                 $user,
