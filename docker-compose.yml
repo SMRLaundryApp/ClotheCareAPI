@@ -15,13 +15,16 @@ services:
         image: mysql
         command: "--default-authentication-plugin=mysql_native_password"
         container_name: sf4_mysql
+
         volumes:
             - .docker/data/db:/var/lib/mysql
         environment:
             MYSQL_ROOT_PASSWORD: root
-            MYSQL_DATABASE: ClotheCare
+            MYSQL_DATABASE: clothe_care_api
             MYSQL_USER: ClotheCare
             MYSQL_PASSWORD: ClotheCare
+        ports:
+          - 33060:3306
 
     php:
         build: .docker/php
