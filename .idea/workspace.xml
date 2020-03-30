@@ -2,29 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7273175a-d9fe-4366-8bab-e7045e1a302e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/View/loginbase.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DataFixtures/BaseFixture.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DataFixtures/UserFixture.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/ApiToken.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/ApiTokenRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Security/ApiKeyAuthenticator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Security/ApiKeyUserProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/ClotheCareAPI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ClotheCareAPI.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/doctrine.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/doctrine.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/TokenController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TokenController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/CustomerRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/OrderRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ProductsRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/security/login.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
@@ -147,6 +143,8 @@
       <path value="$PROJECT_DIR$/vendor/sensio/framework-extra-bundle" />
       <path value="$PROJECT_DIR$/vendor/symfony/phpunit-bridge" />
       <path value="$PROJECT_DIR$/vendor/symfony/twig-pack" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
     </include_path>
   </component>
   <component name="ProjectId" id="1ZVKg8l9cAoYcCWhvFQXZIHNCXY" />
@@ -159,11 +157,14 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Repository" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Programming\ClotheCare\ClotheCareAPI\src\Repository" />
+      <recent name="E:\Programming\ClotheCare\ClotheCareAPI\src\Security" />
+      <recent name="E:\Programming\ClotheCare\ClotheCareAPI\src\DataFixtures" />
       <recent name="E:\Programming\ClotheCare\ClotheCareAPI\public" />
       <recent name="E:\Programming\ClotheCare\ClotheCareAPI\src\View" />
     </key>
@@ -196,7 +197,10 @@
       <workItem from="1585041245544" duration="2237000" />
       <workItem from="1585125255449" duration="604000" />
       <workItem from="1585222752576" duration="498000" />
-      <workItem from="1585253927032" duration="1355000" />
+      <workItem from="1585253927032" duration="2228000" />
+      <workItem from="1585263549299" duration="1719000" />
+      <workItem from="1585265296237" duration="2703000" />
+      <workItem from="1585296307917" duration="5729000" />
     </task>
     <servers />
   </component>
@@ -204,9 +208,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="795" y="443" key="NewPhpFileDialog" timestamp="1585222868863">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2715" y="443" key="NewPhpFileDialog" timestamp="1585341982914">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
+    <state x="2715" y="443" key="NewPhpFileDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585341982914" />
     <state x="795" y="443" key="NewPhpFileDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1585222868863" />
     <state x="-791" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1585125255978">
       <screen x="-1920" y="0" width="1920" height="1040" />
@@ -216,14 +221,14 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2523" y="135" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585253644697" />
-    <state x="3051" y="257" width="739" height="536" key="find.popup" timestamp="1585254698728">
+    <state x="3051" y="257" width="739" height="536" key="find.popup" timestamp="1585300067414">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="3051" y="257" width="739" height="536" key="find.popup/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585254698728" />
+    <state x="3051" y="257" width="739" height="536" key="find.popup/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585300067414" />
     <state x="1131" y="257" width="606" height="526" key="find.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1584919625776" />
-    <state width="300" height="171" key="javadoc.popup.new" timestamp="1585253158480">
+    <state width="300" height="171" key="javadoc.popup.new" timestamp="1585267776061">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="300" height="171" key="javadoc.popup.new/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585253158480" />
+    <state width="300" height="171" key="javadoc.popup.new/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585267776061" />
   </component>
 </project>

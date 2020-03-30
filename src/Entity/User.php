@@ -19,13 +19,22 @@ class User implements UserInterface, \Serializable
     private $id;
 
         /**
-        * @ORM\Column(type="string", length=25, unique=true)
+        * @ORM\Column(name="username",type="string", length=25, unique=true)
         */
     private $username;
 
-        /**
-        * @ORM\Column(type="string", length=64)
-        */
+
+    /**
+     * @var json
+     *
+     * @ORM\Column(name="roles", type="json", nullable=false)
+     */
+    private $roles = [];
+
+
+    /**
+    * @ORM\Column(type="string", length=64)
+    */
     private $password;
 
         /**
@@ -37,6 +46,11 @@ class User implements UserInterface, \Serializable
         * @ORM\Column(name="is_active", type="boolean")
         */
     private $isActive;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $apiToken;
 
     public function __construct()
     {
@@ -62,9 +76,12 @@ class User implements UserInterface, \Serializable
         return $this->password;
     }
 
-    public function getRoles()
+    public function getRoles(): array
     {
-        return array('ROLE_USER');
+        $roles = $this->roles;
+        // guarantee every user at least has ROLE_USER
+        $roles[] = 'ROLE_USER';
+        return array_unique($roles);
     }
 
     public function eraseCredentials()
@@ -94,4 +111,55 @@ class User implements UserInterface, \Serializable
         // $this->salt
         ) = unserialize($serialized, array('allowed_classes' => false));
     }
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function setUsername(string $username): self
+    {
+        $this->username = $username;
+
+        return $this;
+    }
+
+    public function setPassword(string $password): self
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email): self
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+
+
+    public function setRoles(array $roles): self
+    {
+        $this->roles = $roles;
+        return $this;
+    }
+
+    public function getApiToken(): ?string
+    {
+        return $this->apiToken;
+    }
+
+    public function setApiToken(?string $apiToken): self
+    {
+        $this->apiToken = $apiToken;
+
+        return $this;
+    }
+
 }

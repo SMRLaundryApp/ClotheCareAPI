@@ -27,25 +27,39 @@ class SecurityController extends AbstractController
 
     /**
      * @Route("/login", name="app_login")
+     * @param Request $request
+     * @param AuthenticationUtils $utils
+     * @param AuthorizationCheckerInterface $authChecker
+     * @return HttpFoundation\RedirectResponse|HttpFoundation\Response
      */
     public function login(HttpFoundation\Request $request, AuthenticationUtils $utils, AuthorizationCheckerInterface $authChecker)
     {
-        $error = $utils->getLastAuthenticationError();
-        $lastUsername = $utils->getLastUsername();
-
-        if (true === $authChecker->isGranted('ROLE_ADMIN')) {
-            return $this->redirectToRoute('AdminDashboard');
-        }elseif (true === $authChecker->isGranted('ROLE_SUPER-USER')) {
-            return $this->redirectToRoute('dashboard');
-        }elseif (true === $authChecker->isGranted('ROLE_SUPER-USER')) {
-            return $this->redirectToRoute('dashboard');
+        if ($authChecker->isGranted('ROLE_USER')) {
+            return $this->redirectToRoute('homepage');
         }else {
+            $error = $utils->getLastAuthenticationError();
+            $lastUsername = $utils->getLastUsername();
+
+
             return $this->render('security/login.html.twig', [
                 'error' => $error,
                 'last_username' => $lastUsername,
                 'imgnumber' => rand(1, 6)
             ]);
         }
+    }
+    /**
+     * @Route("/api", name="app_api")
+     * @param Request $request
+     * @param AuthenticationUtils $utils
+     * @param AuthorizationCheckerInterface $authChecker
+     * @return HttpFoundation\RedirectResponse|HttpFoundation\Response
+     */
+    public function api(HttpFoundation\Request $request, AuthenticationUtils $utils, AuthorizationCheckerInterface $authChecker)
+    {
+            $error = $utils->getLastAuthenticationError();
+
+            return $this->json($error);
     }
     /**
      * @Route("/logout", name="logout")

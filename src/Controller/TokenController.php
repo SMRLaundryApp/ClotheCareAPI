@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class TokenController extends AbstractController
 {
     /**
-     * @Route("/", name="token")
+     * @Route("/token", name="token")
      */
     public function index()
     {
