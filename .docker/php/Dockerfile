@@ -39,6 +39,14 @@ RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
 
 RUN echo "dev ALL=(ALL) ALL" > /etc/sudoers
 
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+RUN php composer-setup.php
+RUN php -r "unlink('composer-setup.php');"
+RUN mv composer.phar /usr/local/bin/composer
+RUN chmod +x /usr/local/bin/composer
+RUN ln -snf /usr/share/zoneinfo/Europe/Lisbon /etc/localtime
+RUN composer require
+
 WORKDIR /home/wwwroot/
 ##</romaricp>##
 
