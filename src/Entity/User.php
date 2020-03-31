@@ -4,8 +4,11 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use ApiPlatform\Core\Annotation\ApiResource;
 
-    /**
+   /**
+    *
+    * @ApiResource()
     * @ORM\Table(name="app_users")
     * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
     */
@@ -25,8 +28,6 @@ class User implements UserInterface, \Serializable
 
 
     /**
-     * @var json
-     *
      * @ORM\Column(name="roles", type="json", nullable=false)
      */
     private $roles = [];
