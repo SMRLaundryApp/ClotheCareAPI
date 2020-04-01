@@ -5,10 +5,8 @@ services:
         container_name: clothecare.sf4_apache
         environment:
           - VIRTUAL_HOST= clothecare.trifall.net
-          - VIRTUAL_PROTO= https
-          - VIRTUAL_PORT= 8084
-        ports:
-          - 8084:80
+        expose:
+          - 80
         volumes:
           - .docker/config/vhosts:/etc/apache2/sites-enabled
           - .:/home/wwwroot/sf4
@@ -49,6 +47,8 @@ services:
         environment:
           PMA_HOST: mysql
           PMA_PORT: 3306
+          PMA_USERNAME: root
+          PMA_PASSWORD: root
         ports:
             - 8080:80
         links:
