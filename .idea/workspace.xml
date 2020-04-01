@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7273175a-d9fe-4366-8bab-e7045e1a302e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.docker/php/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phpunit.xml.dist" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,7 +204,8 @@
       <workItem from="1585587366825" duration="10120000" />
       <workItem from="1585641673493" duration="6718000" />
       <workItem from="1585690831317" duration="1231000" />
-      <workItem from="1585725699568" duration="4164000" />
+      <workItem from="1585725699568" duration="6057000" />
+      <workItem from="1585745156939" duration="2090000" />
     </task>
     <servers />
   </component>

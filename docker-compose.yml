@@ -2,11 +2,11 @@ version: '3'
 services:
     apache:
         build: .docker/apache
-        container_name: sf4_apache
+        container_name: clothecare.sf4_apache
         environment:
           VIRTUAL_HOST:  clothecare.trifall.net
         expose:
-          - 80
+          - 8084:80
         volumes:
           - .docker/config/vhosts:/etc/apache2/sites-enabled
           - .:/home/wwwroot/sf4
@@ -17,8 +17,7 @@ services:
     mysql:
         image: mysql
         command: "--default-authentication-plugin=mysql_native_password"
-        container_name: sf4_mysql
-
+        container_name: clothecare.sf4_mysql
         volumes:
             - .docker/data/db:/var/lib/mysql
         environment:
@@ -27,10 +26,12 @@ services:
             MYSQL_USER: ClotheCare
             MYSQL_PASSWORD: ClotheCare
         restart: always
+        ports:
+          - 33060:3306
 
     php:
         build: .docker/php
-        container_name: sf4_php
+        container_name: clothecare.sf4_php
         volumes:
           - .:/home/wwwroot/sf4
         environment:
@@ -42,7 +43,7 @@ services:
 
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
-        container_name: sf4_phpmyadmin
+        container_name: clothecare.sf4_phpmyadmin
         environment:
           PMA_HOST: mysql
           PMA_PORT: 3306
@@ -54,7 +55,7 @@ services:
 
     maildev:
         image: djfarrelly/maildev
-        container_name: sf4_maildev
+        container_name: clothecare.sf4_maildev
         ports:
           - 8001:80
         restart: always
