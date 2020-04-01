@@ -5,7 +5,7 @@ services:
         container_name: clothecare.sf4_apache
         environment:
           VIRTUAL_HOST:  clothecare.trifall.net
-        expose:
+        ports:
           - 8084:80
         volumes:
           - .docker/config/vhosts:/etc/apache2/sites-enabled
