@@ -57,10 +57,9 @@
 {% block javascripts %}
     {{ parent() }}
     <script>
-        /**
-        $.post('/api/login',   // url
+        $.post('https://trifall.net/api/login',   // url
             JSON.stringify({
-                username: "CristinaEbert",
+                username: "TyreekMetz",
                 password: "engage"
             }), // data to be submit
             function(data, status, jqXHR) {// success callback
@@ -68,14 +67,21 @@
             });
         $.ajax({
             type: "POST",
-            url: "/api/login",
+            url: "https://trifall.net/api/login",
             data: JSON.stringify({
-                "username": "CristinaEbert",
+                "username": "TyreekMetz",
                 "password": "engage"
             }),
             contentType: 'application/json',
         }).done(function( data ) {
             alert( "Data Loaded: " + data );
-        });*/
+        });
+        $.ajax({
+            type: "GET",
+            url: "https://trifall.net/api/labels",
+            contentType: 'application/json',
+        }).done(function( data ) {
+            alert( "Data Loaded: " + data );
+        });
     </script>
 {% endblock %}

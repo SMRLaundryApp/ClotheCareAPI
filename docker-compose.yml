@@ -3,8 +3,8 @@ services:
     apache:
         build: .docker/apache
         container_name: sf4_apache
-        ports:
-          - 80:80
+        environment:
+          VIRTUAL_HOST:  clothecare.trifall.net
         volumes:
           - .docker/config/vhosts:/etc/apache2/sites-enabled
           - .:/home/wwwroot/sf4
@@ -23,8 +23,6 @@ services:
             MYSQL_DATABASE: clothe_care_api
             MYSQL_USER: ClotheCare
             MYSQL_PASSWORD: ClotheCare
-        ports:
-          - 33060:3306
 
     php:
         build: .docker/php
@@ -43,8 +41,6 @@ services:
         environment:
           PMA_HOST: mysql
           PMA_PORT: 3306
-          PMA_USER: root
-          PMA_PASSWORD: root
         ports:
             - 8080:80
         links:
