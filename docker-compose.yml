@@ -7,6 +7,8 @@ services:
           - VIRTUAL_HOST= clothecare.trifall.net
         expose:
           - 80
+        ports:
+          - 8085:80
         volumes:
           - .docker/config/vhosts:/etc/apache2/sites-enabled
           - .:/home/wwwroot/sf4
