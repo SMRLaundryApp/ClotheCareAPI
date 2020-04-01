@@ -10,7 +10,7 @@ services:
           - .:/home/wwwroot/sf4
         depends_on:
           - php
-
+        restart: always
     mysql:
         image: mysql
         command: "--default-authentication-plugin=mysql_native_password"
@@ -23,6 +23,7 @@ services:
             MYSQL_DATABASE: clothe_care_api
             MYSQL_USER: ClotheCare
             MYSQL_PASSWORD: ClotheCare
+        restart: always
 
     php:
         build: .docker/php
@@ -34,6 +35,7 @@ services:
         depends_on:
           - maildev
           - mysql
+        restart: always
 
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
@@ -45,9 +47,11 @@ services:
             - 8080:80
         links:
             - mysql
+        restart: always
 
     maildev:
         image: djfarrelly/maildev
         container_name: sf4_maildev
         ports:
           - 8001:80
+        restart: always
