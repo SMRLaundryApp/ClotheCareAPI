@@ -4,7 +4,9 @@ services:
         build: .docker/apache
         container_name: clothecare.sf4_apache
         environment:
-          VIRTUAL_HOST:  clothecare.trifall.net
+          - VIRTUAL_HOST= clothecare.trifall.net
+          - VIRTUAL_PROTO= https
+          - VIRTUAL_PORT= 8084
         ports:
           - 8084:80
         volumes:
