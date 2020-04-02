@@ -1,45 +1,83 @@
-FROM php:7.2.10-fpm
+######
+# See: https://hub.docker.com/_/php/
+######
 
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends vim curl debconf subversion git apt-transport-https apt-utils \
-    build-essential locales acl mailutils wget nodejs zip unzip \
-    gnupg gnupg1 gnupg2 \
-    zlib1g-dev \
-    sudo
+FROM php:7.4.0-fpm
+MAINTAINER Paulo Coutinho <paulo@prsolucoes.com>
 
-RUN docker-php-ext-install pdo pdo_mysql zip
+######
+# You can configure php extensions using docker-php-ext-configure
+# You can install php extensions using docker-php-ext-install
+######
 
-COPY php.ini /usr/local/etc/php/php.ini
-COPY php-fpm-pool.conf 	/usr/local/etc/php/pool.d/www.conf
+# define timezone
+RUN echo "America/Sao_Paulo" > /etc/timezone
+RUN dpkg-reconfigure -f noninteractive tzdata
+RUN /bin/echo -e "LANG=\"en_US.UTF-8\"" > /etc/default/local
 
-RUN curl -sSk https://getcomposer.org/installer | php -- --disable-tls && \
-	mv composer.phar /usr/local/bin/composer
+# install dependencies
+RUN apt-get update
+RUN apt-get install -y build-essential 
+RUN apt-get install -y libfreetype6-dev
+RUN apt-get install -y libjpeg62-turbo-dev
+RUN apt-get install -y libmcrypt-dev
+RUN apt-get install -y libpng-dev
+RUN apt-get install -y curl
+RUN apt-get install -y libcurl4
+RUN apt-get install -y libcurl4-openssl-dev
+RUN apt-get install -y zlib1g-dev
+RUN apt-get install -y libicu-dev
+RUN apt-get install -y libmemcached-dev
+RUN apt-get install -y memcached
+RUN apt-get install -y default-mysql-client
+RUN apt-get install -y libmagickwand-dev
+RUN apt-get install -y unzip
+RUN apt-get install -y libzip-dev
+RUN apt-get install -y zip
 
-RUN wget --no-check-certificate https://phar.phpunit.de/phpunit-6.5.3.phar && \
-    mv phpunit*.phar phpunit.phar && \
-    chmod +x phpunit.phar && \
-    mv phpunit.phar /usr/local/bin/phpunit
+# memcached
+RUN pecl install memcached-3.1.5
+RUN docker-php-ext-enable memcached
 
-RUN	echo "deb https://deb.nodesource.com/node_6.x jessie main" >> /etc/apt/sources.list.d/nodejs.list && \
-	wget -nv -O -  https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add - && \
-	echo "deb-src https://deb.nodesource.com/node_6.x jessie main" >> /etc/apt/sources.list.d/nodejs.list && \
-    apt-get update && \
-	apt-get install -y --force-yes nodejs && \
-	rm -f /etc/apt/sources.list.d/nodejs.list
+# mcrypt
+RUN pecl install mcrypt-1.0.3
+RUN docker-php-ext-enable mcrypt
 
-RUN groupadd dev -g 999
-RUN useradd dev -g dev -d /home/dev -m
-RUN passwd -d dev
+# configure, install and enable all php packages
+RUN docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg
+RUN docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd
+RUN docker-php-ext-configure mysqli --with-mysqli=mysqlnd
+RUN docker-php-ext-configure intl
+RUN docker-php-ext-configure zip
 
-RUN rm -rf /var/lib/apt/lists/*
-RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
-    echo "fr_FR.UTF-8 UTF-8" >> /etc/locale.gen && \
-    locale-gen
+RUN docker-php-ext-install -j$(nproc) pdo_mysql
+RUN docker-php-ext-install -j$(nproc) mysqli
+RUN docker-php-ext-install -j$(nproc) pdo
+RUN docker-php-ext-install -j$(nproc) gd
+RUN docker-php-ext-install -j$(nproc) intl
+RUN docker-php-ext-install -j$(nproc) zip
 
-RUN echo "dev ALL=(ALL) ALL" > /etc/sudoers
+# install xdebug
+RUN pecl install xdebug
+RUN docker-php-ext-enable xdebug
 
-WORKDIR /home/wwwroot/
-##</romaricp>##
+RUN echo "xdebug.remote_enable=1" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+RUN echo "xdebug.remote_autostart=0" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+RUN echo "xdebug.default_enable=0" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+RUN echo "xdebug.remote_host=host.docker.internal" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+RUN echo "xdebug.remote_port=9000" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+RUN echo "xdebug.remote_connect_back=0" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+RUN echo "xdebug.profiler_enable=0" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+RUN echo "xdebug.remote_log=\"/tmp/xdebug.log\"" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 
-EXPOSE 9000
-CMD ["php-fpm"]
+# install imagick
+RUN pecl install imagick
+RUN docker-php-ext-enable imagick
+
+# install composer
+RUN cd /tmp \
+    && curl -sS https://getcomposer.org/installer | php \
+    && mv composer.phar /usr/local/bin/composer
+
+# clean image
+RUN apt-get clean

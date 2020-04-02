@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7273175a-d9fe-4366-8bab-e7045e1a302e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.docker/apache/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/apache/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.docker/config/vhosts/sf4.conf" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/config/vhosts/sf4.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_1.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_1.ibt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_10.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_10.ibt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_2.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_2.ibt" afterDir="false" />
@@ -13,15 +13,21 @@
       <change beforePath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_7.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_7.ibt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_8.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_8.ibt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_9.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_9.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.docker/data/db/binlog.000002" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/binlog.000002" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.docker/data/db/binlog.000004" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/binlog.000004" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.docker/data/db/binlog.index" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/binlog.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.docker/data/db/ib_buffer_pool" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/ib_buffer_pool" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.docker/data/db/ib_logfile0" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/ib_logfile0" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.docker/data/db/ibdata1" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/ibdata1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.docker/data/db/ibtmp1" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/ibtmp1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.docker/data/db/mysql.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/mysql.ibd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.docker/data/db/undo_001" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/undo_001" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.docker/data/db/undo_002" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/undo_002" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.docker/php/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/php/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -224,7 +230,7 @@
       <workItem from="1585690831317" duration="1231000" />
       <workItem from="1585725699568" duration="6057000" />
       <workItem from="1585745156939" duration="10016000" />
-      <workItem from="1585811990386" duration="47000" />
+      <workItem from="1585811990386" duration="7707000" />
     </task>
     <servers />
   </component>
@@ -253,11 +259,11 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2523" y="135" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585253644697" />
-    <state x="1131" y="257" width="606" height="526" key="find.popup" timestamp="1585775674100">
+    <state x="1131" y="257" width="606" height="526" key="find.popup" timestamp="1585839036113">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="3051" y="257" width="739" height="536" key="find.popup/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585300067414" />
-    <state x="1131" y="257" width="606" height="526" key="find.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1585775674100" />
+    <state x="1131" y="257" width="606" height="526" key="find.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1585839036113" />
     <state width="300" height="171" key="javadoc.popup.new" timestamp="1585574347733">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
