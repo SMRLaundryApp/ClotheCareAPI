@@ -79,5 +79,7 @@ RUN cd /tmp \
     && curl -sS https://getcomposer.org/installer | php \
     && mv composer.phar /usr/local/bin/composer
 
+RUN composer require
+
 # clean image
 RUN apt-get clean

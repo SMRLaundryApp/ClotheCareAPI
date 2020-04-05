@@ -4,9 +4,6 @@ namespace App\Controller;
 
 use App\Entity\ApiToken;
 use App\Entity\User;
-use App\Form\AccountType;
-use App\Form\UserChangeType;
-use App\Form\UserType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -49,6 +46,36 @@ class SecurityController extends AbstractController
             ]);
         }
     }
+
+    /**
+     * @Route("/api/Users/maker", name="api_user", methods={"POST"})
+     */
+    public function index(EntityManagerInterface $em, Request $request)
+    {
+        $data = json_decode($request->getContent(), true);
+        $userCheck = $this->getDoctrine()->getRepository(user::class)->findOneBy( ['username'=>$data['username'],'email'=>$data['email']]);
+        if (empty($userCheck)) {
+            $user = new user();
+            $user->setEmail($data['email']);
+            $user->setUsername($data['username']);
+            $user->setRoles(["ROLE_USER"]);
+            $user->setPassword($this->passwordEncoder->encodePassword(
+                $user,
+                $data['password']
+            ));
+            $em->persist($user);
+            $em->flush();
+
+            return $this->json([
+                'user' => $user,
+            ]);
+        }else{
+            return $this->json([
+                'error' => "this user already exists",
+            ]);
+        }
+    }
+
     /**
      * @Route("/api/login", name="app_api_login", methods={"POST"})
      * @param Request $request
@@ -67,9 +94,7 @@ class SecurityController extends AbstractController
         }
 
         return $this->json([
-                'user' => $this->getUser() ? $this->getUser()->getId() : null,
-                'roles' => $this->getUser() ? $this->getUser()->getRoles() : null,
-                'Token' => $token,
+                'user' => $this->getUser() ? $this->getUser() : null
             ]
         );
     }
