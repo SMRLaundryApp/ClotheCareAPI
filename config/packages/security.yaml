@@ -38,7 +38,9 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
+        - { path: ^/api/Users/maker , roles: IS_AUTHENTICATED_ANONYMOUSLY,  methods: POST }
         - { path: ^/api/login, roles: IS_AUTHENTICATED_ANONYMOUSLY}
+        - { path: ^/api , roles: ROLE_ADMIN,  methods: DELETE }
         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY}
         - { path: ^/api , roles: ROLE_USER}
         - { path: ^/, roles: ROLE_USER }
