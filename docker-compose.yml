@@ -50,7 +50,7 @@ services:
         environment:
           PMA_HOST: mysql
           PMA_PORT: 3306
-          PMA_USERNAME: root
+          PMA_USER: root
           PMA_PASSWORD: root
         ports:
             - 8080:80
