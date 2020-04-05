@@ -15,12 +15,11 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class SecurityController extends AbstractController
 {
+    private $passwordEncoder;
 
-    private $encoder;
-
-    public function __construct(UserPasswordEncoderInterface $encoder)
+    public function __construct(UserPasswordEncoderInterface $passwordEncoder)
     {
-        $this->encoder= $encoder;
+        $this->passwordEncoder = $passwordEncoder;
     }
 
     /**
