@@ -18,7 +18,7 @@ services:
         restart: always
 
     clothecare_mysql:
-        image: clothecare_mysql
+        image: mysql
         command: "--default-authentication-plugin=mysql_native_password"
         container_name: clothecare_sf4_mysql
         volumes:
