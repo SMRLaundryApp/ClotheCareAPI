@@ -5,10 +5,13 @@ namespace App\Controller;
 use App\Entity\Label;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 class LabelController extends AbstractController
 {
@@ -16,15 +19,38 @@ class LabelController extends AbstractController
      * @Route("/api/image/upload", name="Photo_upload")
      * @Method("POST")
      */
-    public function PhotoUpload(Request $request)
+    public function PhotoUpload(Request $request,  ValidatorInterface $validator)
     {
+        /** @var UploadedFile $uploadedFile */
+        $uploadedFile = $request->files->get('image');
+        $violations = $validator->validate(
+            $uploadedFile,
+            [
+                new NotBlank([
+                    'message' => 'Please select a file to upload'
+                ]),
+                new File([
+                    'maxSize' => '5M',
+                    'mimeTypes' => [
+                        'image/*',
+                        'application/pdf',
+                        'application/msword',
+                        'application/vnd.ms-excel',
+                        'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+                        'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+                        'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+                        'text/plain'
+                    ]
+                ])
+            ]
+        );
+        if ($violations->count() > 0) {
+            return $this->json($violations, 400);
+        }
+
         $em = $this->getDoctrine()->getManager();
         $Photo = new Label();
-        $data = $request->files->get('image');
-        /**
-         * @var UploadedFile $file
-         */
-        $file = $data;
+        $file = $uploadedFile;
         $fileName = $this->generateUniqueFileName() . '.' . $file->guessExtension();
 
         try {
@@ -41,7 +67,7 @@ class LabelController extends AbstractController
         $em->persist($Photo);
         $em->flush();
         return new Response(
-            json_encode($data)
+            json_encode($uploadedFile)
         );
     }
     /**
