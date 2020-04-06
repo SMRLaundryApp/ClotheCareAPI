@@ -21,12 +21,9 @@ class LabelController extends AbstractController
      */
     public function PhotoUpload(Request $request,  ValidatorInterface $validator)
     {
-        return new Response(
-            json_encode($request)
-        );
-        /*
-        /** @var UploadedFile $uploadedFile
-        $uploadedFile = $request->files->get('image');
+        $data = json_decode($request->getContent(), true);
+        /** @var UploadedFile $uploadedFile */
+        $uploadedFile = $data;
         $violations = $validator->validate(
             $uploadedFile,
             [
@@ -66,7 +63,6 @@ class LabelController extends AbstractController
         return new Response(
             json_encode($uploadedFile)
         );
-        */
     }
     /**
      * @return string
