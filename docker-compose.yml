@@ -47,8 +47,10 @@ services:
     imageReader:
       image: laundrysymbolreader/reader
       container_name: clothecare_sf4_imageReader
+      volumes:
+        - path/to/image/
       environment:
-        - 
+        - IMG_FNAME=path/to/image/image_name.extension
       depends_on:
         - clothecare_php
       restart: always
