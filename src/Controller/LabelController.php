@@ -16,7 +16,7 @@ class LabelController extends AbstractController
      * @Route("/api/image/upload", name="Photo_upload")
      * @Method("POST")
      */
-    public function PhotoUpload(Request $request )
+    public function PhotoUpload(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
         $Photo = new Label();

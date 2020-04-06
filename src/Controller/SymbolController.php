@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class SymbolController extends AbstractController
 {
     /**
-     * @Route("/symbol", name="symbol")
+     * @Route("/symbol", name="homepage")
      */
     public function index()
     {
