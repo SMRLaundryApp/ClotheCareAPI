@@ -21,9 +21,12 @@ class LabelController extends AbstractController
      */
     public function PhotoUpload(Request $request,  ValidatorInterface $validator)
     {
+        $filePath = tempnam(sys_get_temp_dir(), 'UploadedFile');
         $data = json_decode($request->getContent(), true);
+        $image = base64_decode($data['image']);
+        $location= file_put_contents($filePath, $image);
         /** @var UploadedFile $uploadedFile */
-        $uploadedFile = $data;
+        $uploadedFile = $image;
         $violations = $validator->validate(
             $uploadedFile,
             [

@@ -32,7 +32,7 @@ services:
         ports:
           - 33060:3306
 
-    php:
+    clothecare_php:
         build: .docker/php
         container_name: clothecare_sf4_php
         volumes:
@@ -43,6 +43,15 @@ services:
           - maildev
           - clothecare_mysql
         restart: always
+
+    imageReader:
+      image: laundrysymbolreader/reader
+      container_name: clothecare_sf4_imageReader
+      environment:
+        - 
+      depends_on:
+        - clothecare_php
+      restart: always
 
     phpmyadmin:
         image: phpmyadmin/phpmyadmin

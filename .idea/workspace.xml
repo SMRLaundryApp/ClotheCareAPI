@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7273175a-d9fe-4366-8bab-e7045e1a302e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/LabelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/LabelController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -214,6 +215,8 @@
       <workItem from="1586014433645" duration="672000" />
       <workItem from="1586074395922" duration="6045000" />
       <workItem from="1586114002167" duration="8772000" />
+      <workItem from="1586155879181" duration="2890000" />
+      <workItem from="1586172338782" duration="1270000" />
     </task>
     <servers />
   </component>
