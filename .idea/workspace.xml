@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7273175a-d9fe-4366-8bab-e7045e1a302e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/OpenController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/OpenController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Label.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Label.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/LabelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/LabelController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,7 +213,7 @@
       <workItem from="1585951645310" duration="610000" />
       <workItem from="1586014433645" duration="672000" />
       <workItem from="1586074395922" duration="6045000" />
-      <workItem from="1586114002167" duration="3911000" />
+      <workItem from="1586114002167" duration="4395000" />
     </task>
     <servers />
   </component>
