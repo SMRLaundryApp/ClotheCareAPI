@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ApiResource()
@@ -25,8 +26,11 @@ class Label
 
     /**
      * @ORM\Column(type="string", length=255)
+     *
+     * @Assert\NotBlank(message="Please, upload the photo as a jpeg file.")
+     * @Assert\File(mimeTypes={ "image/jpeg" })
      */
-    private $logo;
+    private $image;
 
     public function getId(): ?int
     {
@@ -45,14 +49,14 @@ class Label
         return $this;
     }
 
-    public function getLogo(): ?string
+    public function getImage(): ?string
     {
-        return $this->logo;
+        return $this->image;
     }
 
-    public function setLogo(string $logo): self
+    public function setImage(string $image): self
     {
-        $this->logo = $logo;
+        $this->image = $image;
 
         return $this;
     }
