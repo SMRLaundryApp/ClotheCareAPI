@@ -2,8 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7273175a-d9fe-4366-8bab-e7045e1a302e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/Labels/00.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Labels/01.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Labels/02.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Labels/03.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Labels/04.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Labels/05.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Labels/06.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Labels/07.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Labels/08.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Labels/09.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Labels/10.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Labels/11.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Labels/12.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Labels/13.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Labels/14.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Labels/00.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Labels/01.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +169,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/Labels" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
@@ -216,6 +232,7 @@
       <workItem from="1586114002167" duration="8772000" />
       <workItem from="1586155879181" duration="2890000" />
       <workItem from="1586172338782" duration="2878000" />
+      <workItem from="1586858497119" duration="778000" />
     </task>
     <servers />
   </component>
