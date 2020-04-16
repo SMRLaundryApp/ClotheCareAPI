@@ -1,7 +1,6 @@
 ######
 # See: https://hub.docker.com/_/php/
 ######
-
 FROM php:7.4.0-fpm
 MAINTAINER Paulo Coutinho <paulo@prsolucoes.com>
 
@@ -14,6 +13,8 @@ MAINTAINER Paulo Coutinho <paulo@prsolucoes.com>
 RUN echo "America/Sao_Paulo" > /etc/timezone
 RUN dpkg-reconfigure -f noninteractive tzdata
 RUN /bin/echo -e "LANG=\"en_US.UTF-8\"" > /etc/default/local
+
+
 
 # install dependencies
 RUN apt-get update

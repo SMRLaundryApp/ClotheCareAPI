@@ -14,7 +14,7 @@ services:
           - .docker/config/vhosts:/etc/apache2/sites-enabled
           - .:/home/wwwroot/sf4
         depends_on:
-          - php
+          - clothecare_php
         restart: always
 
     clothecare_mysql:

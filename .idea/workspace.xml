@@ -2,24 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7273175a-d9fe-4366-8bab-e7045e1a302e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/Labels/00.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Labels/01.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Labels/02.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Labels/03.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Labels/04.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Labels/05.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Labels/06.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Labels/07.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Labels/08.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Labels/09.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Labels/10.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Labels/11.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Labels/12.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Labels/13.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Labels/14.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_1.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_1.ibt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_10.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_10.ibt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_2.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_2.ibt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_3.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_3.ibt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_4.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_4.ibt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_5.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_5.ibt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_6.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_6.ibt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_7.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_7.ibt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_8.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_8.ibt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_9.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_9.ibt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.docker/data/db/binlog.000014" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/binlog.000014" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.docker/data/db/binlog.index" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/binlog.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.docker/data/db/ib_buffer_pool" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/ib_buffer_pool" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.docker/data/db/ib_logfile0" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/ib_logfile0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.docker/data/db/ibdata1" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/ibdata1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.docker/data/db/ibtmp1" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/ibtmp1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.docker/data/db/mysql.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/mysql.ibd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.docker/data/db/undo_001" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/undo_001" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.docker/data/db/undo_002" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/undo_002" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.docker/php/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/php/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ClotheCareAPI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ClotheCareAPI.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/Labels/00.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/Labels/01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/LabelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/LabelController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,9 +169,12 @@
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/vendor/phpseclib/phpseclib" />
     </include_path>
   </component>
   <component name="ProjectId" id="1ZVKg8l9cAoYcCWhvFQXZIHNCXY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -174,11 +189,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\programming\ClotheCare\ClotheCareAPI\public\Labels" />
       <recent name="D:\programming\ClotheCare\ClotheCareAPI" />
       <recent name="E:\Programming\ClotheCare\ClotheCareAPI\src\Repository" />
       <recent name="E:\Programming\ClotheCare\ClotheCareAPI\src\Security" />
       <recent name="E:\Programming\ClotheCare\ClotheCareAPI\src\DataFixtures" />
-      <recent name="E:\Programming\ClotheCare\ClotheCareAPI\public" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -232,7 +247,11 @@
       <workItem from="1586114002167" duration="8772000" />
       <workItem from="1586155879181" duration="2890000" />
       <workItem from="1586172338782" duration="2878000" />
-      <workItem from="1586858497119" duration="778000" />
+      <workItem from="1586858497119" duration="6472000" />
+      <workItem from="1586935169029" duration="10581000" />
+      <workItem from="1586981322690" duration="7090000" />
+      <workItem from="1587021560496" duration="3234000" />
+      <workItem from="1587025579576" duration="9050000" />
     </task>
     <servers />
   </component>
@@ -253,10 +272,10 @@
     </state>
     <state x="2715" y="443" key="NewPhpFileDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1585341982914" />
     <state x="795" y="443" key="NewPhpFileDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1585222868863" />
-    <state x="1204" y="367" key="com.intellij.ide.util.TipDialog" timestamp="1586078067577">
+    <state x="1204" y="367" key="com.intellij.ide.util.TipDialog" timestamp="1587025582910">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="1204" y="367" key="com.intellij.ide.util.TipDialog/-2560.0.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1586078067577" />
+    <state x="1204" y="367" key="com.intellij.ide.util.TipDialog/-2560.0.2048.1112/0.0.2048.1112@0.0.2048.1112" timestamp="1587025582910" />
     <state x="-791" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1585811992370" />
     <state x="2523" y="135" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1585253644697">
       <screen x="1920" y="0" width="1920" height="1040" />

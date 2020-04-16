@@ -5,9 +5,13 @@ namespace App\Controller;
 use App\Entity\Label;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Process\Exception\ProcessFailedException;
+use Symfony\Component\Process\Process;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
+use phpseclib\Net\SSH2;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\Validator\Constraints\NotBlank;
@@ -16,41 +20,34 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 class LabelController extends AbstractController
 {
     /**
+     * @Route("/api/image/test", name="test_upload")
+     */
+    public function TestReaderFunction(Request $request,  ValidatorInterface $validator)
+    {
+        $ssh = new SSH2('urenapi.nl');
+        if (!$ssh->login('root', 'L1ndseyT1m')) {
+            exit('Login Failed');
+        }
+        dd($ssh->exec('./laundry-symbol-reader/bin/laundry-symbol-reader-dk ClotheCareAPI/public/Labels/'.'02.jpeg'));
+
+        return new Response(
+        );
+    }
+
+    /**
      * @Route("/api/image/upload", name="Photo_upload")
-     * @Method("POST")
      */
     public function PhotoUpload(Request $request,  ValidatorInterface $validator)
     {
-        $filePath = tempnam(sys_get_temp_dir(), 'UploadedFile');
-        $data = json_decode($request->getContent(), true);
-        $image = base64_decode($data['image']);
-        $location= file_put_contents($filePath, $image);
-        /** @var UploadedFile $uploadedFile */
-        $uploadedFile = $image;
-        $violations = $validator->validate(
-            $uploadedFile,
-            [
-                new NotBlank([
-                    'message' => 'Please select a file to upload'
-                ]),
-                new File([
-                    'maxSize' => '5M',
-                    'mimeTypes' => [
-                        'image/*'
-                    ]
-                ])
-            ]
-        );
-        if ($violations->count() > 0) {
-            return $this->json($violations, 400);
-        }
 
+        $data = $request->files->get('data');
+
+        /** @var UploadedFile $uploadedFile */
         $em = $this->getDoctrine()->getManager();
         $Photo = new Label();
         $file = $uploadedFile;
         $fileName = $this->generateUniqueFileName() . '.' . $file->guessExtension();
-
-        try {
+       try {
             $file->move(
                 $this->getParameter('file_directory'),
                 $fileName
@@ -58,8 +55,6 @@ class LabelController extends AbstractController
         } catch (FileException $e) {
             // ... handle exception if something happens during file upload
         }
-
-
         $Photo->setImage($fileName);
         $em->persist($Photo);
         $em->flush();
