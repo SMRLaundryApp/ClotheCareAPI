@@ -6,21 +6,15 @@ use App\Entity\Label;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Process\Exception\ProcessFailedException;
-use Symfony\Component\Process\Process;
-use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use phpseclib\Net\SSH2;
-use Symfony\Component\Routing\Annotation\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 class LabelController extends AbstractController
 {
     /**
-     * @Route("/api/image/test", name="test_upload")
+     * @return string
      */
     public function TestReaderFunction(Request $request,  ValidatorInterface $validator)
     {
@@ -28,10 +22,9 @@ class LabelController extends AbstractController
         if (!$ssh->login('root', 'L1ndseyT1m')) {
             exit('Login Failed');
         }
-        dd($ssh->exec('./laundry-symbol-reader/bin/laundry-symbol-reader-dk ClotheCareAPI/public/Labels/'.'02.jpeg'));
+        $respone=$ssh->exec('./laundry-symbol-reader/bin/laundry-symbol-reader-dk ClotheCareAPI/public/Labels/'.'02.jpeg');
 
-        return new Response(
-        );
+        return new $respone;
     }
 
     /**
@@ -42,10 +35,10 @@ class LabelController extends AbstractController
 
         $data = $request->files->get('data');
 
-        /** @var UploadedFile $uploadedFile */
+        /** @var UploadedFile $file */
         $em = $this->getDoctrine()->getManager();
         $Photo = new Label();
-        $file = $uploadedFile;
+        $file = $data['image'];
         $fileName = $this->generateUniqueFileName() . '.' . $file->guessExtension();
        try {
             $file->move(
@@ -58,6 +51,7 @@ class LabelController extends AbstractController
         $Photo->setImage($fileName);
         $em->persist($Photo);
         $em->flush();
+        $this->TestReaderFunction();
         return new Response(
             json_encode($uploadedFile)
         );

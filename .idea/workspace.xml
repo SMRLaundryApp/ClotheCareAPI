@@ -2,36 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7273175a-d9fe-4366-8bab-e7045e1a302e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_1.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_1.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_10.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_10.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_2.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_2.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_3.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_3.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_4.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_4.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_5.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_5.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_6.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_6.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_7.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_7.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_8.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_8.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_9.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/#innodb_temp/temp_9.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.docker/data/db/binlog.000014" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/binlog.000014" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.docker/data/db/binlog.index" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/binlog.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.docker/data/db/ib_buffer_pool" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/ib_buffer_pool" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.docker/data/db/ib_logfile0" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/ib_logfile0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.docker/data/db/ibdata1" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/ibdata1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.docker/data/db/ibtmp1" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/ibtmp1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.docker/data/db/mysql.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/mysql.ibd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.docker/data/db/undo_001" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/undo_001" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.docker/data/db/undo_002" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/data/db/undo_002" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.docker/php/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/.docker/php/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ClotheCareAPI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ClotheCareAPI.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/LabelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/LabelController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -251,7 +223,7 @@
       <workItem from="1586935169029" duration="10581000" />
       <workItem from="1586981322690" duration="7090000" />
       <workItem from="1587021560496" duration="3234000" />
-      <workItem from="1587025579576" duration="9050000" />
+      <workItem from="1587025579576" duration="10406000" />
     </task>
     <servers />
   </component>
