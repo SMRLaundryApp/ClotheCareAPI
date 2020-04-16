@@ -16,13 +16,13 @@ class LabelController extends AbstractController
     /**
      * @return string
      */
-    public function TestReaderFunction(Request $request,  ValidatorInterface $validator)
+    public function TestReaderFunction($filename)
     {
         $ssh = new SSH2('urenapi.nl');
         if (!$ssh->login('root', 'L1ndseyT1m')) {
             exit('Login Failed');
         }
-        $respone=$ssh->exec('./laundry-symbol-reader/bin/laundry-symbol-reader-dk ClotheCareAPI/public/Labels/'.'02.jpeg');
+        $respone=$ssh->exec('./laundry-symbol-reader/bin/laundry-symbol-reader-dk ClotheCareAPI/public/Labels/'.$filename);
 
         return new $respone;
     }
@@ -51,7 +51,7 @@ class LabelController extends AbstractController
         $Photo->setImage($fileName);
         $em->persist($Photo);
         $em->flush();
-        $this->TestReaderFunction();
+        $this->TestReaderFunction('02.jpeg');
         return new Response(
             json_encode($uploadedFile)
         );
