@@ -52,9 +52,9 @@ class LabelController extends AbstractController
         $Photo->setImage($fileName);
         $em->persist($Photo);
         $em->flush();
-        $this->TestReaderFunction('02.jpeg');
+        $responseLine=$this->TestReaderFunction('02.jpeg');
         return new Response(
-            json_encode($uploadedFile)
+            json_encode($responseLine)
         );
     }
     /**
